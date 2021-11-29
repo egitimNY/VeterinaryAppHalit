@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.halit.veterinaryapphalit.Models.LoginModel;
 import com.halit.veterinaryapphalit.R;
 import com.halit.veterinaryapphalit.RestApi.ManagerAll;
+import com.halit.veterinaryapphalit.Utils.GetSharedPreferences;
 import com.halit.veterinaryapphalit.Utils.Warnings;
 
 import retrofit2.Call;
@@ -76,6 +77,8 @@ public class GirisYapActivity extends AppCompatActivity {
                if (response.body().isTf()) {
                    Toast.makeText(getApplicationContext(), response.body().getText(), Toast.LENGTH_LONG).show();
                    Intent intent = new Intent(GirisYapActivity.this,MainActivity.class);
+                   GetSharedPreferences getSharedPreferences = new GetSharedPreferences(GirisYapActivity.this);
+                   getSharedPreferences.setSession(response.body().getId(),response.body().getUsername(),response.body().getMailadres());
                    startActivity(intent);
                    finish();
                }else {
