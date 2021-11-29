@@ -1,9 +1,11 @@
 package com.halit.veterinaryapphalit.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ import retrofit2.Response;
 public class KayitOlActivity extends AppCompatActivity {
     private Button kayitOlButton;
     private EditText registerPassword,registerUserName,registerMailAddress;
+    private TextView registerText;
 
 
     @Override
@@ -29,6 +32,7 @@ public class KayitOlActivity extends AppCompatActivity {
 
         tanimla();
         registerToUser();
+        changeActivity();
     }
 
     private void tanimla() {
@@ -36,6 +40,7 @@ public class KayitOlActivity extends AppCompatActivity {
         registerPassword = findViewById(R.id.registerPassword);
         registerUserName = findViewById(R.id.registerUserName);
         registerMailAddress = findViewById(R.id.registerMailAddress);
+        registerText = findViewById(R.id.registerText);
     }
 
     public void registerToUser(){
@@ -55,6 +60,17 @@ public class KayitOlActivity extends AppCompatActivity {
 
     }
 
+    public void changeActivity(){
+        registerText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(KayitOlActivity.this, GirisYapActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
     public void delete(){
         registerPassword.setText("");
         registerUserName.setText("");
@@ -68,8 +84,12 @@ public class KayitOlActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<RegisterPojo> call, Response<RegisterPojo> response) {
-                if (response.body().isTf()){
+                if (response.body().isTf())
+                {
                     Toast.makeText(getApplicationContext(), response.body().getText(), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(KayitOlActivity.this, GirisYapActivity.class);
+                    startActivity(intent);
+                    finish();
                 }else {
                     Toast.makeText(getApplicationContext(), response.body().getText(), Toast.LENGTH_LONG).show();
                 }
