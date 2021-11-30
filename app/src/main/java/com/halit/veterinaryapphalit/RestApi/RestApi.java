@@ -1,7 +1,10 @@
 package com.halit.veterinaryapphalit.RestApi;
 
 import com.halit.veterinaryapphalit.Models.LoginModel;
+import com.halit.veterinaryapphalit.Models.PetModel;
 import com.halit.veterinaryapphalit.Models.RegisterPojo;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -18,9 +21,14 @@ public interface RestApi {
 
 
     @FormUrlEncoded
-//    @POST("/VeterinerServices_muratkoc/kayitol.php")
     @POST("/veteriner/girisyap.php")
-//    @POST("/veteriner/kayitolDeneme.php")
     Call<LoginModel> loginUser(@Field("mailadres") String mailAdres, @Field("sifre") String pass );
+
+
+    @FormUrlEncoded
+    @POST("/veteriner/petlerim.php")
+    Call<List<PetModel>> getPets(@Field("musid") String mus_id );
+
+
 
 }

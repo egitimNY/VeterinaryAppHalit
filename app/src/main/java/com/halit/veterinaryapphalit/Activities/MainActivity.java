@@ -6,7 +6,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.halit.veterinaryapphalit.Fragments.HomeFragment;
 import com.halit.veterinaryapphalit.R;
+import com.halit.veterinaryapphalit.Utils.ChangeFragments;
 import com.halit.veterinaryapphalit.Utils.GetSharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,8 +20,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getFragment();
         tanimla();
         kontrol();
+    }
+
+    private void getFragment() {
+        ChangeFragments changeFragments = new ChangeFragments(MainActivity.this);
+        changeFragments.change(new HomeFragment());
     }
 
     private void tanimla() {
