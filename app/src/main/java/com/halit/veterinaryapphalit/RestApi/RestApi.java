@@ -17,17 +17,24 @@ public interface RestApi {
 //    @POST("/VeterinerServices_muratkoc/kayitol.php")
     @POST("/veteriner/kayitol.php")
 //    @POST("/veteriner/kayitolDeneme.php")
-    Call<RegisterPojo> registerUser(@Field("mailAdres") String kayitol, @Field("kadi") String kadi, @Field("pass") String pass );
+
+    Call<RegisterPojo> registerUser(
+            @Field("mailAdres") String kayitol,
+            @Field("kadi") String kadi,
+            @Field("pass") String pass );
 
 
     @FormUrlEncoded
     @POST("/veteriner/girisyap.php")
-    Call<LoginModel> loginUser(@Field("mailadres") String mailAdres, @Field("sifre") String pass );
+    Call<LoginModel> loginUser(
+            @Field("mailadres") String mailAdres,
+            @Field("sifre") String pass );
 
 
     @FormUrlEncoded
     @POST("/veteriner/petlerim.php")
-    Call<List<PetModel>> getPets(@Field("musid") String mus_id );
+    Call<List<PetModel>> getPets(
+            @Field("musid") String mus_id );
 
 
 

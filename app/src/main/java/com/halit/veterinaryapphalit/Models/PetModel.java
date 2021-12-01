@@ -3,61 +3,77 @@ package com.halit.veterinaryapphalit.Models;
 import java.io.Serializable;
 
 public class PetModel implements Serializable {
-	private String petid;
-	private String petresim;
-	private String pettur;
-	private String petisim;
-	private String petcins;
+    private boolean tf;
+    private String petid;
+    private String petresim;
+    private String pettur;
+    private String petisim;
+    private String petcins;
 
-	public void setPetid(String petid){
-		this.petid = petid;
-	}
+    public void setTf(boolean tf) {
+        this.tf = tf;
+    }
 
-	public String getPetid(){
-		return petid;
-	}
+    public boolean isTf() {
+        return tf;
+    }
 
-	public void setPetresim(String petresim){
-		this.petresim = petresim;
-	}
 
-	public String getPetresim(){
-		return petresim;
-	}
+    public void setPetid(String petid) {
+        this.petid = petid;
+    }
 
-	public void setPettur(String pettur){
-		this.pettur = pettur;
-	}
+    public String getPetid() {
+        return petid;
+    }
 
-	public String getPettur(){
-		return pettur;
-	}
 
-	public void setPetisim(String petisim){
-		this.petisim = petisim;
-	}
+    public void setPetresim(String petresim) {
+        this.petresim = petresim;
+    }
 
-	public String getPetisim(){
-		return petisim;
-	}
+    public String getPetresim() {
+        return petresim;
+    }
 
-	public void setPetcins(String petcins){
-		this.petcins = petcins;
-	}
 
-	public String getPetcins(){
-		return petcins;
-	}
+    public void setPettur(String pettur) {
+        this.pettur = pettur;
+    }
 
-	@Override
- 	public String toString(){
-		return 
-			"PetModel{" +
-			"petid = '" + petid + '\'' + 
-			",petresim = '" + petresim + '\'' + 
-			",pettur = '" + pettur + '\'' + 
-			",petisim = '" + petisim + '\'' + 
-			",petcins = '" + petcins + '\'' + 
-			"}";
-		}
+    public String getPettur() {
+        return pettur;
+    }
+
+
+    public void setPetisim(String petisim) {
+        this.petisim = petisim;
+    }
+
+    public String getPetisim() {
+        return petisim;
+    }
+
+
+    public void setPetcins(String petcins) {
+        this.petcins = petcins;
+    }
+
+    public String getPetcins() {
+        return petcins;
+    }
+
+
+    @Override
+    public String toString() {
+        return
+                "PetModel{" +
+                        "tf = '" + tf + '\'' +
+                        "petid = '" + petid + '\'' +
+                        ",petresim = '" + petresim + '\'' +
+                        ",pettur = '" + pettur + '\'' +
+                        ",petisim = '" + petisim + '\'' +
+                        ",petcins = '" + petcins + '\'' +
+                        "}";
+    }
 }
