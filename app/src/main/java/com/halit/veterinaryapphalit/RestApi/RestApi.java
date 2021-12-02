@@ -1,5 +1,6 @@
 package com.halit.veterinaryapphalit.RestApi;
 
+import com.halit.veterinaryapphalit.Models.AskQuestionModel;
 import com.halit.veterinaryapphalit.Models.LoginModel;
 import com.halit.veterinaryapphalit.Models.PetModel;
 import com.halit.veterinaryapphalit.Models.RegisterPojo;
@@ -18,24 +19,22 @@ public interface RestApi {
     @POST("/veteriner/kayitol.php")
 //    @POST("/veteriner/kayitolDeneme.php")
 
-    Call<RegisterPojo> registerUser(
-            @Field("mailAdres") String kayitol,
-            @Field("kadi") String kadi,
-            @Field("pass") String pass );
+    Call<RegisterPojo> registerUser(@Field("mailAdres") String kayitol, @Field("kadi") String kadi, @Field("pass") String pass);
 
 
     @FormUrlEncoded
     @POST("/veteriner/girisyap.php")
-    Call<LoginModel> loginUser(
-            @Field("mailadres") String mailAdres,
-            @Field("sifre") String pass );
+    Call<LoginModel> loginUser(@Field("mailadres") String mailAdres, @Field("sifre") String pass);
 
 
     @FormUrlEncoded
     @POST("/veteriner/petlerim.php")
-    Call<List<PetModel>> getPets(
-            @Field("musid") String mus_id );
+    Call<List<PetModel>> getPets(@Field("musid") String mus_id);
 
+
+    @FormUrlEncoded
+    @POST("/veteriner/sorusor.php")
+    Call<AskQuestionModel> soruSor(@Field("id") String id, @Field("soru") String soru);
 
 
 }

@@ -20,6 +20,7 @@ public class ChangeFragments {
         ((FragmentActivity)context).getSupportFragmentManager().beginTransaction()
                 .replace(R.id.mainFrameLayout,fragment,"fragment")
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                .commit();
+//                .commit();
+                .addToBackStack(null).commit();
     }
 }
