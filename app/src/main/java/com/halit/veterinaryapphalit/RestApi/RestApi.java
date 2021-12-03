@@ -1,5 +1,6 @@
 package com.halit.veterinaryapphalit.RestApi;
 
+import com.halit.veterinaryapphalit.Models.AnswerModel;
 import com.halit.veterinaryapphalit.Models.AskQuestionModel;
 import com.halit.veterinaryapphalit.Models.LoginModel;
 import com.halit.veterinaryapphalit.Models.PetModel;
@@ -36,5 +37,9 @@ public interface RestApi {
     @POST("/veteriner/sorusor.php")
     Call<AskQuestionModel> soruSor(@Field("id") String id, @Field("soru") String soru);
 
+
+    @FormUrlEncoded
+    @POST("/veteriner/cevaplar.php")
+    Call<List<AnswerModel>> getAnswer(@Field("mus_id") String mus_id);
 
 }

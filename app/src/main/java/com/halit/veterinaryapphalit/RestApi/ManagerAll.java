@@ -1,5 +1,6 @@
 package com.halit.veterinaryapphalit.RestApi;
 
+import com.halit.veterinaryapphalit.Models.AnswerModel;
 import com.halit.veterinaryapphalit.Models.AskQuestionModel;
 import com.halit.veterinaryapphalit.Models.LoginModel;
 import com.halit.veterinaryapphalit.Models.PetModel;
@@ -39,6 +40,11 @@ public class ManagerAll extends BaseManager {
     public Call<AskQuestionModel> soruSor(String id , String soru)
     {
         Call<AskQuestionModel> x = getRestApi().soruSor(id,soru);
+        return  x ;
+    }
+
+    public Call<List<AnswerModel>> getAnswer(String id) {
+        Call<List<AnswerModel>> x = getRestApi().getAnswer(id);
         return  x ;
     }
 

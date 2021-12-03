@@ -285,6 +285,8 @@
                 app:cardElevation="20dp">
 
                 <LinearLayout
+                    android:id="@+id/cevapLayout"
+                    android:clickable="true"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
