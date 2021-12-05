@@ -30,15 +30,19 @@
                     android:id="@+id/cevapSoruText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textStyle="bold"
-                    android:text="Soru" />
+                    android:text="Soru"
+                    android:textColor="#fb4040"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/cevapText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textStyle="bold"
-                    android:text="Cevap" />
+                    android:text="Cevap"
+                    android:textColor="#2568db"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>

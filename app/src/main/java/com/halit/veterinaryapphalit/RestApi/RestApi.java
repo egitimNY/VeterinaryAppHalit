@@ -2,6 +2,7 @@ package com.halit.veterinaryapphalit.RestApi;
 
 import com.halit.veterinaryapphalit.Models.AnswerModel;
 import com.halit.veterinaryapphalit.Models.AskQuestionModel;
+import com.halit.veterinaryapphalit.Models.DeleteAnswerModel;
 import com.halit.veterinaryapphalit.Models.LoginModel;
 import com.halit.veterinaryapphalit.Models.PetModel;
 import com.halit.veterinaryapphalit.Models.RegisterPojo;
@@ -41,5 +42,10 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("/veteriner/cevaplar.php")
     Call<List<AnswerModel>> getAnswer(@Field("mus_id") String mus_id);
+
+
+    @FormUrlEncoded
+    @POST("/veteriner/cevapSil.php")
+    Call<DeleteAnswerModel> deleteAnswer(@Field("cevap") String cevapid, @Field("soru") String soruid);
 
 }
