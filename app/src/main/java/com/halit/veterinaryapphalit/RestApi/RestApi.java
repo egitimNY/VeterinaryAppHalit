@@ -3,6 +3,7 @@ package com.halit.veterinaryapphalit.RestApi;
 import com.halit.veterinaryapphalit.Models.AnswerModel;
 import com.halit.veterinaryapphalit.Models.AskQuestionModel;
 import com.halit.veterinaryapphalit.Models.DeleteAnswerModel;
+import com.halit.veterinaryapphalit.Models.KampanyaModel;
 import com.halit.veterinaryapphalit.Models.LoginModel;
 import com.halit.veterinaryapphalit.Models.PetModel;
 import com.halit.veterinaryapphalit.Models.RegisterPojo;
@@ -12,6 +13,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface RestApi {
@@ -47,5 +49,8 @@ public interface RestApi {
     @FormUrlEncoded
     @POST("/veteriner/cevapSil.php")
     Call<DeleteAnswerModel> deleteAnswer(@Field("cevap") String cevapid, @Field("soru") String soruid);
+
+    @GET("/veteriner/kampanya.php")
+    Call<List<KampanyaModel>> getKampanya();
 
 }

@@ -3,6 +3,7 @@ package com.halit.veterinaryapphalit.RestApi;
 import com.halit.veterinaryapphalit.Models.AnswerModel;
 import com.halit.veterinaryapphalit.Models.AskQuestionModel;
 import com.halit.veterinaryapphalit.Models.DeleteAnswerModel;
+import com.halit.veterinaryapphalit.Models.KampanyaModel;
 import com.halit.veterinaryapphalit.Models.LoginModel;
 import com.halit.veterinaryapphalit.Models.PetModel;
 import com.halit.veterinaryapphalit.Models.RegisterPojo;
@@ -52,6 +53,12 @@ public class ManagerAll extends BaseManager {
     public Call<DeleteAnswerModel> deleteAnswer(String cevap , String soru)
     {
         Call<DeleteAnswerModel> x = getRestApi().deleteAnswer(cevap,soru);
+        return  x ;
+    }
+
+    public Call<List<KampanyaModel>> getKampanya()
+    {
+        Call<List<KampanyaModel>> x = getRestApi().getKampanya();
         return  x ;
     }
 

@@ -154,8 +154,10 @@
                 app:cardElevation="20dp">
 
                 <LinearLayout
+                    android:id="@+id/kampanyaLinearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:clickable="true"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:gravity="center"
@@ -166,58 +168,15 @@
                         android:layout_height="70dp"
                         android:layout_margin="15dp"
                         android:layout_weight="2"
-                        android:src="@drawable/pets"
+                        android:src="@drawable/kampanya"
                         app:civ_border_color="#2c6087"
-                        app:civ_border_width="2dp" />
+                        app:civ_border_width="2dp"/>
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:text="Kampanyalar"
-                        android:textColor="#41bce6"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="15dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/nexticon" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="10dp"
-                app:cardBackgroundColor="#fff7e9"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:layout_width="0dp"
-                        android:layout_height="70dp"
-                        android:layout_margin="15dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/pets"
-                        app:civ_border_color="#2c6087"
-                        app:civ_border_width="2dp" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:text="iletisim"
                         android:textColor="#41bce6"
                         android:textSize="20dp"
                         android:textStyle="bold" />
