@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,6 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/anasayfaLinearLayout"
         android:layout_margin="5dp"
         app:cardBackgroundColor="#fff"
         app:cardElevation="2dp">
@@ -19,4 +20,31 @@
         </FrameLayout>
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/anasayfaLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/anasayfaButton"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Ana Sayfa"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/aramaYapButton"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Arama Yap"/>
+    </LinearLayout>
+</RelativeLayout>
