@@ -39,7 +39,7 @@ public class SanalKarnePetlerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_user_pets, container, false);
+        view = inflater.inflate(R.layout.fragment_sanal_karne_petler, container, false);
 
 
         tanimla();
@@ -50,7 +50,7 @@ public class SanalKarnePetlerFragment extends Fragment {
 
     public void tanimla(){
         petList = new ArrayList<>();
-        sanalKarnePetler = view.findViewById(R.id.petListRecyclerView);
+        sanalKarnePetler = view.findViewById(R.id.sanalKarnePetler);
         RecyclerView.LayoutManager mng = new GridLayoutManager(getContext(),1);
         sanalKarnePetler.setLayoutManager(mng);
         changeFragments =new ChangeFragments(getContext());
