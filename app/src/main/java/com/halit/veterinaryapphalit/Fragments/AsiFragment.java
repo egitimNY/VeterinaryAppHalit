@@ -14,6 +14,7 @@ import com.halit.veterinaryapphalit.Models.AsiModel;
 import com.halit.veterinaryapphalit.R;
 import com.halit.veterinaryapphalit.RestApi.ManagerAll;
 import com.halit.veterinaryapphalit.Utils.ChangeFragments;
+import com.halit.veterinaryapphalit.Utils.GetSharedPreferences;
 import com.squareup.picasso.Picasso;
 import com.squareup.timessquare.CalendarPickerView;
 
@@ -39,6 +40,8 @@ public class AsiFragment extends Fragment {
     private Date today;
     private List<AsiModel> asiList;
     private List<Date> dateList;
+    private String id;
+    private GetSharedPreferences getSharedPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,11 +64,13 @@ public class AsiFragment extends Fragment {
         calendarPickerView.init(today,nextYear.getTime());
         asiList = new ArrayList<>();
         dateList = new ArrayList<>();
+        getSharedPreferences = new GetSharedPreferences(getActivity());
+        id = getSharedPreferences.getSession().getString("id",null);
 
     }
 
     public void getAsi(){
-        Call<List<AsiModel>> req = ManagerAll.getInstance().getAsi("30");
+        Call<List<AsiModel>> req = ManagerAll.getInstance().getAsi(id);
         req.enqueue(new Callback<List<AsiModel>>() {
             @Override
             public void onResponse(Call<List<AsiModel>> call, Response<List<AsiModel>> response) {
