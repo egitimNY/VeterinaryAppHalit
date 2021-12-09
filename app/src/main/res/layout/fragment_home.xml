@@ -66,6 +66,8 @@
                 app:cardElevation="20dp">
 
                 <LinearLayout
+                    android:id="@+id/asiTakipLayout"
+                    android:clickable="true"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"

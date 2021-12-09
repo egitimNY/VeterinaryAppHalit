@@ -1,6 +1,7 @@
 package com.halit.veterinaryapphalit.RestApi;
 
 import com.halit.veterinaryapphalit.Models.AnswerModel;
+import com.halit.veterinaryapphalit.Models.AsiModel;
 import com.halit.veterinaryapphalit.Models.AskQuestionModel;
 import com.halit.veterinaryapphalit.Models.DeleteAnswerModel;
 import com.halit.veterinaryapphalit.Models.KampanyaModel;
@@ -52,5 +53,9 @@ public interface RestApi {
 
     @GET("/veteriner/kampanya.php")
     Call<List<KampanyaModel>> getKampanya();
+
+    @FormUrlEncoded
+    @POST("/veteriner/asitakip.php")
+    Call<List<AsiModel>> getAsi(@Field("id") String id);
 
 }

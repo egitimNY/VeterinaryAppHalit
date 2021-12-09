@@ -1,6 +1,7 @@
 package com.halit.veterinaryapphalit.RestApi;
 
 import com.halit.veterinaryapphalit.Models.AnswerModel;
+import com.halit.veterinaryapphalit.Models.AsiModel;
 import com.halit.veterinaryapphalit.Models.AskQuestionModel;
 import com.halit.veterinaryapphalit.Models.DeleteAnswerModel;
 import com.halit.veterinaryapphalit.Models.KampanyaModel;
@@ -59,6 +60,11 @@ public class ManagerAll extends BaseManager {
     public Call<List<KampanyaModel>> getKampanya()
     {
         Call<List<KampanyaModel>> x = getRestApi().getKampanya();
+        return  x ;
+    }
+
+    public Call<List<AsiModel>> getAsi(String id) {
+        Call<List<AsiModel>> x = getRestApi().getAsi(id);
         return  x ;
     }
 
