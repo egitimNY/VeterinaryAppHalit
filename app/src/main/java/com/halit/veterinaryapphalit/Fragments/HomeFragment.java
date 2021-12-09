@@ -33,7 +33,8 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
     private View view;
-    private LinearLayout petlerimLayout,soruSorLinerLayout,cevapLayout,kampanyaLinearLayout,asiTakipLayout;
+    private LinearLayout petlerimLayout,soruSorLinerLayout,cevapLayout,kampanyaLinearLayout,
+            sanalKarneLayout,asiTakipLayout;
     private ChangeFragments changeFragments;
     private GetSharedPreferences getSharedPreferences;
     private String id;
@@ -55,6 +56,7 @@ public class HomeFragment extends Fragment {
         soruSorLinerLayout = view.findViewById(R.id.soruSorLinerLayout);
         cevapLayout = view.findViewById(R.id.cevapLayout);
         asiTakipLayout = view.findViewById(R.id.asiTakipLayout);
+        sanalKarneLayout = view.findViewById(R.id.sanalKarneLayout);
 
         answerList = new ArrayList<>();
         kampanyaLinearLayout = view.findViewById(R.id.kampanyaLinearLayout);
@@ -93,6 +95,12 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 changeFragments.change(new AsiFragment());
+            }
+        });
+        sanalKarneLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeFragments.change(new SanalKarnePetlerFragment());
             }
         });
 
