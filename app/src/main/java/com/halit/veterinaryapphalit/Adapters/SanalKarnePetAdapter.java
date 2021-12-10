@@ -7,10 +7,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.halit.veterinaryapphalit.Fragments.AsiDetayFragment;
 import com.halit.veterinaryapphalit.Models.PetModel;
 import com.halit.veterinaryapphalit.R;
+import com.halit.veterinaryapphalit.Utils.ChangeFragments;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -35,7 +38,7 @@ public class SanalKarnePetAdapter extends RecyclerView.Adapter<SanalKarnePetAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.sanalKarnePetText.setText(list.get(position).getPetisim().toString());
         holder.sanalKarneBilgiText.setText(list.get(position).getPetisim().toString()+" isimli "+
@@ -44,6 +47,13 @@ public class SanalKarnePetAdapter extends RecyclerView.Adapter<SanalKarnePetAdap
 
 //        Picasso.get().load(list.get(position).getPetresim()).into(holder.petLayoutPetImage);
         Picasso.get().load(list.get(position).getPetresim()).into(holder.sanalKarnePetImage);
+        holder.sanalLayoutCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChangeFragments changeFragments = new ChangeFragments(context);
+                changeFragments.changeWithParameters(new AsiDetayFragment(),list.get(position).getPetid());
+            }
+        });
     }
 
     @Override
@@ -54,6 +64,7 @@ public class SanalKarnePetAdapter extends RecyclerView.Adapter<SanalKarnePetAdap
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView sanalKarnePetText,sanalKarneBilgiText;
         CircleImageView sanalKarnePetImage;
+        CardView sanalLayoutCardView;
 
         // itemView ile LisView'un he elemani icin Layout ile olusturdugumuz View tanimlamasi islemi gerceklesiyor
         public ViewHolder(View itemView) {
@@ -61,6 +72,7 @@ public class SanalKarnePetAdapter extends RecyclerView.Adapter<SanalKarnePetAdap
             sanalKarneBilgiText = itemView.findViewById(R.id.sanalKarneBilgiText);
             sanalKarnePetText = itemView.findViewById(R.id.sanalKarnePetText);
             sanalKarnePetImage = itemView.findViewById(R.id.sanalKarnePetImage);
+            sanalLayoutCardView = itemView.findViewById(R.id.sanalLayoutCardView);
         }
     }
 }

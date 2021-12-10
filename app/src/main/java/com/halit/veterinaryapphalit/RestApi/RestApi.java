@@ -58,4 +58,8 @@ public interface RestApi {
     @POST("/veteriner/asitakip.php")
     Call<List<AsiModel>> getAsi(@Field("id") String id);
 
+    @FormUrlEncoded
+    @POST("/veteriner/gecmisasi.php")
+    Call<List<AsiModel>> getGecmisAsi(@Field("id") String id, @Field("petid") String pet_id );
+
 }
