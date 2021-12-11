@@ -68,10 +68,10 @@ public class SanalKarnePetlerFragment extends Fragment {
                     petList = response.body();
                     sanalKarnePetAdapter = new SanalKarnePetAdapter(petList,getContext());
                     sanalKarnePetler.setAdapter(sanalKarnePetAdapter);
-                    Toast.makeText(getContext(), "Sistemde kayitli " +petList.size() + " petiniz bulunmaktadir", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getContext(), "Sistemde kayitli " +petList.size() + " petiniz bulunmaktadir", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(getContext(), "Sistemde kayitli petiniz bulunmamaktadir", Toast.LENGTH_LONG).show();
-                    changeFragments.change(new HomeFragment());
+                    Toast.makeText(getContext(), " Sistemde kayitli petiniz bulunmamaktadir ", Toast.LENGTH_SHORT).show();
+//                    changeFragments.change(new HomeFragment());
                 }
             }
 
