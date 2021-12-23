@@ -23,70 +23,93 @@
             <TextView
                 android:id="@+id/info_text"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="top|center"
-                android:text="Animal Veteriner Hekimligi"
-                android:layout_height="wrap_content"
+                android:text="OZK Veteriner Hekimligi"
                 android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="#d35400"
-                android:layout_marginTop="30dp"/>
+                android:textSize="25sp"
+                android:textColor="#0D406C"
+                android:layout_marginTop="50dp"/>
             <ImageView
-                android:layout_width="128dp"
+                android:layout_width="165dp"
                 android:layout_height="128dp"
                 android:layout_gravity="center"
-                android:background="@drawable/anaekran"
-                android:layout_marginTop="10dp"/>
+                android:background="@drawable/cat"
+                android:layout_marginTop="15dp"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="10dp">
+
 
                 <EditText
                     android:id="@+id/loginMailAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Mail Adresi Giriniz"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="3dp">
+                    android:layout_width="322dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/custom_email_icon"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:layout_marginTop="25dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:drawablePadding="12dp"
+                    android:layout_gravity="center"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:hint="Enter Your Email Address" />
 
                 <EditText
                     android:id="@+id/loginPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Sifre Giriniz"
-                    android:inputType="textPassword"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:text="Sisteme Kayitli Hesabim yok....!"
-                android:layout_marginTop="5dp"
-                android:layout_gravity="right"
-                android:gravity="right"
-                android:textColor="#d35400"
-                android:id="@+id/loginText"
-                android:layout_marginRight="30dp"/>
+                    android:layout_width="322dp"
+                    android:ems="10"
+                    android:layout_height="55dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_gravity="center"
+                    android:drawablePadding="12dp"
+                    android:background="@drawable/custom_input"
+                    android:drawableStart="@drawable/custom_lock_icon"
+                    android:layout_marginTop="7dp"
+                    android:hint="Enter Your Password"
+                    android:focusableInTouchMode="true"
+                    android:inputType="textPassword"
+                    android:drawableLeft="@drawable/ic_lock" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginButon"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="135dp"
+                android:layout_height="40dp"
+                android:background="@drawable/button_input"
+                android:gravity="center"
+                android:text="Login"/>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Giris Yap"/>
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="128dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't have an account?"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/loginText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="11dp"
+                    android:text="Sign Up"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#11597A"/>
+            </LinearLayout>
 
         </LinearLayout>
 
